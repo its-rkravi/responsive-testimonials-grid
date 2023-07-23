@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
+
+/* Declare Variables */
+
+:root {
+  /* Layout ( width for Desktop and Mobile Screens) */
+
+  --mobile: 375px;
+  --desktop: 1440px;
+
+  /* Primary Colors */
+
+  --Moderate-violet: hsl(263, 55%, 52%);
+  --Very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --Very-dark-blackish-blue: hsl(219, 29%, 14%);
+  --White: hsl(0, 0%, 100%);
+
+  /* Neutral Colors */
+
+  --Light-gray: hsl(0, 0%, 81%);
+  --Light-grayish-blue: hsl(210, 46%, 95%);
+
+  /* 
+    1. "Verified Graduate" has the same color as the person's name with 50% opacity
+    2. Review paragraphs inside the quotations have the same color as well, but are at 70% opacity
+ */
+
+  --opacity-sm: 50%;
+  --opacity-md: 70%;
+
+  --fw-sm: 500;
+  --fw-md: 700;
+}
+
+/* Global Reset */
+*,
+*::before,
+*::afer {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 13px;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+body {
+  background-color: var(--Light-grayish-blue);
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+/* purple and white border styling */
+
+.border-purple {
+  border: 2px solid var(--Moderate-violet);
+}
+
+.border-white {
+  border: 2px solid var(--Light-gray);
+}
+
+.text-black {
+  color: var(--Very-dark-grayish-blue);
+}
+
+/* Actual Styling Starts from here */
+.main {
+  max-width: 1440px;
+  max-height: 900px;
+}
+
+.user-reviews-container {
+  max-width: 1200px;
+  /* max-height: 700px; */
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 2rem;
+  color: var(--White);
+  padding: 2rem;
+}
+
+.user-1 {
+  /* Daniel Clifford */
+  grid-column: 1/4;
+  grid-row: 1/2;
+  background-color: var(--Moderate-violet);
+  position: relative;
+  z-index: -1;
+}
+
+.bg-pattern {
+  position: absolute;
+  width: 10rem;
+  top: 0;
+  right: 10rem;
+  z-index: -2;
+}
+
+.user-2 {
+  /* Jonathan Walters */
+  grid-column: 4/5;
+  grid-row: 1/2;
+  background-color: var(--Very-dark-grayish-blue);
+}
+
+.user-3 {
+  /* Jenette Harmon */
+  background-color: var(--White);
+  grid-column: 1/2;
+  grid-row: 2/-1;
+}
+
+.user-4 {
+  /* Patrick Abrams */
+  background-color: var(--Very-dark-blackish-blue);
+  grid-column: 2/5;
+  grid-row: 2/-1;
+}
+
+.user-5 {
+  /* Kira Whittle */
+  grid-column: 5/6;
+  grid-row: 1/-1;
+  background-color: var(--White);
+}
+
+/* For giving gap b/w user-container and user-review-content */
+.gap {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+/* Styling User image, username, user-type etc */
+
+.username-info-container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.user-img {
+  max-width: 3rem;
+  border-radius: 50%;
+}
+
+.user-type {
+  opacity: var(--opacity-sm);
+}
+
+.review-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.review-heading {
+  font-size: 1.5rem;
+}
+
+.review-content {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  opacity: var(--opacity-md);
+}
+
+/* Responsive design for Mobile Screen */
+
+@media (max-width: 500px) {
+  .user-reviews-container {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+  }
+
+  .username {
+    font-size: 1.5rem;
+  }
+
+  .user-type {
+    font-size: 1.2rem;
+  }
+
+  .bg-pattern {
+    right: 3rem;
+  }
+
+  .review-heading {
+    font-size: 2rem;
+  }
+
+  .review-content {
+    font-size: 1.5rem;
+    line-height: 1.7rem;
+    opacity: var(--opacity-md);
+  }
+}
